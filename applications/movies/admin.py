@@ -1,4 +1,7 @@
 from django.contrib import admin
-from .models import Movie
+from applications.movies.models import Movie
+
+class MovieAdmin(admin.ModelAdmin):
+    readonly_fields=['image']
 
 admin.site.register(Movie)

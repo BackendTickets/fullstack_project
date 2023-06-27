@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
-from movies.serializers import MovieSerializer
-from .models import Movie
+from applications.movies.serializers import MovieSerializer
+from applications.movies.models import Movie
 
 class MovieViewSet(ModelViewSet):
     queryset = Movie.objects.all()
