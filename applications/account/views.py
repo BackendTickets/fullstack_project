@@ -5,7 +5,6 @@ from rest_framework import status
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
-# from rest_framework_simplejwt.authentication import JWTTokenUserAuthentication
 
 
 class RegistrationView(CreateAPIView):
@@ -57,7 +56,6 @@ class DropPasswordView(CreateAPIView):
     
 
 class ChangeForgottenPasswordView(CreateAPIView):
-    # authentication_classes = [JWTTokenUserAuthentication]
 
 
     def post(self, request, *args, **kwargs):
