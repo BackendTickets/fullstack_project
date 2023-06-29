@@ -11,7 +11,7 @@ class Movie(models.Model):
     )
 
     title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='movies/')
+    image = models.URLField()
     cast = models.CharField()
     link = models.URLField()
     release_date = models.DateField()
