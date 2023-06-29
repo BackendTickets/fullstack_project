@@ -9,7 +9,7 @@ def create_activation_code(user):
 
 def send_activation_code(user):
     message = f""" 
-    Спасибо за регистрацию! Ваш код активации{user.activation_code} 
+    Спасибо за регистрацию! Ваш код активации {user.activation_code} 
     """
     send_mail(
         subject='Активация аккаунта', 
