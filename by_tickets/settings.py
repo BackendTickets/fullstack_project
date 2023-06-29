@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "django_filters",
     "rest_framework_simplejwt",
     "corsheaders",
+    "djoser",
 
     'applications.account',
     'applications.movies',
@@ -179,6 +180,12 @@ CACHES = {
     }
 }
 
+DJOSER = {
+    "PASSWORD_RESET_CONFIRM_URL": "#/password/reset/confirm/{uid}/{token}",
+    "USERNAME_RESET_CONFIRM_URL": "#/username/reset/confirm/{uid}/{token}",
+    "ACTIVATION_URL": "/activate?uid={uid}&token={token}",
+    "SEND_ACTIVATION_EMAIL": True,
+}
 
 
 
