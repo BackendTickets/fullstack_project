@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "djoser",
 
     'applications.movies',
+    'applications.genres',
 ]
 
 MIDDLEWARE = [
