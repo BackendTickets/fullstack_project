@@ -157,7 +157,10 @@ EMAIL_USE_TLS = os.getenv("USE_TLS", True)
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    )
+        ),
+        "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+        "PAGE_SIZE": 1
+    
 }
 
 SIMPLE_JWT = {
