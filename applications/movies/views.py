@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 class MovieViewSet(ModelViewSet):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
-    # ilterset_fields = ['tag__title', 'status']
+    ilterset_fields = ['genres', 'release_date']
     search_fields = ['title', 'genres', 'cast']
 
     def get_permissions(self):
