@@ -206,3 +206,5 @@ SWAGGER_SETTINGS = {
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+DOMAIN = 'localhost: 3000'
