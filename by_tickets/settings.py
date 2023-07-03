@@ -178,8 +178,7 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT__BACKEND = 'redis://localhost:6379'
+
 
 
 CACHES = {
