@@ -53,6 +53,8 @@ INSTALLED_APPS = [
 
     'applications.movies',
     'applications.genres',
+    'applications.reviews',
+
 ]
 
 MIDDLEWARE = [
@@ -193,6 +195,7 @@ DJOSER = {
     "ACTIVATION_URL": "activate/?uid={uid}&token={token}",
     "SEND_ACTIVATION_EMAIL": True,
 }
+
 
 SWAGGER_SETTINGS = {
    'SECURITY_DEFINITIONS': {

@@ -39,7 +39,8 @@ urlpatterns = [
     path("auth/", include("djoser.urls.jwt")),
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('movies/', include('applications.movies.urls')),
-    path('genres/', include('applications.genres.urls'))
+    path('genres/', include('applications.genres.urls')),
+    path('reviews/', include('applications.reviews.urls'))
 
 ]
 
