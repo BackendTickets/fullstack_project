@@ -197,7 +197,7 @@ DJOSER = {
 
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINATIONS':{
-        'Bearer': {
+        'Token': {
             'type': 'apiKey',
             'name': 'Authorization',
             'in': 'header'
