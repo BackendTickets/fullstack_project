@@ -52,6 +52,8 @@ INSTALLED_APPS = [
 
     'applications.movies',
     'applications.genres',
+    'applications.reviews',
+
 ]
 
 MIDDLEWARE = [
@@ -191,19 +193,6 @@ DJOSER = {
     "USERNAME_RESET_CONFIRM_URL": "#/username/reset/confirm/{uid}/{token}",
     "ACTIVATION_URL": "/activate/?uid={uid}&token={token}",
     "SEND_ACTIVATION_EMAIL": True,
-}
-
-
-
-SWAGGER_SETTINGS = {
-    'SECURITY_DEFINATIONS':{
-        'Bearer': {
-            'type': 'apiKey',
-            'name': 'Authorization',
-            'in': 'header'
-        }
-    },
-    'USE_SESSION_AUTH': False
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
