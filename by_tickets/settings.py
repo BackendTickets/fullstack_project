@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     "rest_framework",
-    'rest_framework.authtoken',
+    'rest_framework.authtoken', 
     "drf_yasg",
     "django_filters",
     "rest_framework_simplejwt",
@@ -194,17 +194,14 @@ DJOSER = {
     "SEND_ACTIVATION_EMAIL": True,
 }
 
-
-
 SWAGGER_SETTINGS = {
-    'SECURITY_DEFINATIONS':{
-        'Token': {
+   'SECURITY_DEFINITIONS': {
+      'Bearer': {
             'type': 'apiKey',
             'name': 'Authorization',
             'in': 'header'
-        }
-    },
-    'USE_SESSION_AUTH': False
+      }
+   }
 }
 
 CORS_ALLOW_ALL_ORIGINS = True
