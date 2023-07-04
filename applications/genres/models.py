@@ -1,5 +1,4 @@
 from django.db import models
-from applications.movies.models import Movie
 
 
 class Genre(models.Model):
@@ -15,7 +14,6 @@ class Genre(models.Model):
     )
 
     title = models.CharField(max_length=100, choices=GENRE_CHOICES)
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
