@@ -1,4 +1,5 @@
 from django.db import models
+from applications.genres.models import Genre
 
 class Movie(models.Model):
     
@@ -6,6 +7,7 @@ class Movie(models.Model):
     image = models.URLField()
     cast = models.CharField()
     link = models.URLField()
+    genres = models.ManyToManyField(Genre)
     release_date = models.DateField()
     director = models.CharField(max_length=255)
     description = models.TextField(blank=True)
