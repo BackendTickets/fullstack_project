@@ -15,7 +15,7 @@ class Genre(models.Model):
     )
 
     title = models.CharField(max_length=100, choices=GENRE_CHOICES)
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, blank=True)
 
     def __str__(self):
         return self.title
