@@ -9,7 +9,7 @@ class Movie(models.Model):
     release_date = models.DateField()
     director = models.CharField(max_length=255)
     description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=6)
+    price = models.FloatField()
     duration = models.DurationField()
     is_favorite = models.BooleanField(default=False)
 
