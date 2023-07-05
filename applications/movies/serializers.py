@@ -4,19 +4,19 @@ from applications.movies.models import Movie
 from applications.genres.models import Genre
 
 class MovieSerializer(serializers.ModelSerializer):
-    genres = GenreSerializer(many=True, required=False)
+    # genres = GenreSerializer(many=True, required=False)
 
     class Meta:
         model = Movie
         fields = '__all__'
 
-    def create(self, validated_data):
-        genre_data = validated_data.pop('genre', None)
+    # def create(self, validated_data):
+    #     genre_data = validated_data.pop('genre', None)
 
-        movie = Movie.objects.create(**validated_data)
+    #     movie = Movie.objects.create(**validated_data)
 
-        if genre_data:
-            genre, _ = Genre.objects.get_or_create(**genre_data)
-            movie.genre = genre
+    #     if genre_data:
+    #         genre, _ = Genre.objects.get_or_create(**genre_data)
+    #         movie.genre = genre
 
-        return movie
+    #     return movie
