@@ -19,6 +19,5 @@ class MovieSerializer(serializers.ModelSerializer):
             genre, _ = Genre.objects.get_or_create(**genre_data)
             movie.genres.add(genre)
         
-        movie.save()
 
         return movie
