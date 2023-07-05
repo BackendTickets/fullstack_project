@@ -11,14 +11,12 @@ class MovieSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def create(self, validated_data):
-        genres_data = validated_data.get('genres', [])
+        genre_data = validated_data.pop('genre', None)
+
         movie = Movie.objects.create(**validated_data)
 
-        genres = []
-        for genre_data in genres_data:
+        if genre_data:
             genre, _ = Genre.objects.get_or_create(**genre_data)
-            genres.append(genre)
-
-        movie.genres.set(genres)
+            movie.genre = genre
 
         return movie
