@@ -26,3 +26,8 @@ class MovieViewSet(ModelViewSet):
         else:
             self.permission_classes = [IsAuthenticated, IsAuthor]
         return super().get_permissions()
+    
+
+    def perform_create(self, serializer):
+        if serializer.is_valid():
+            serializer.save()
