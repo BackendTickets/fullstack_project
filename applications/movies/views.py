@@ -1,11 +1,12 @@
 from rest_framework.viewsets import ModelViewSet
 from applications.movies.serializers import MovieSerializer
 from applications.movies.models import Movie
-from permissions.permissions import IsOwnerOrIsAdminUser
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.filters import SearchFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from permissions.permissions import IsAuthor
+
 
 
 
@@ -18,8 +19,10 @@ class MovieViewSet(ModelViewSet):
     search_fields = ['title', 'genres', 'cast']
 
     def get_permissions(self):
-        if self.request.method in ["PUT", "PATCH", "DELETE"]:
-            self.permission_classes = [IsOwnerOrIsAdminUser]
+        if self.request.method == 'GET':
+            self.permission_classes = [AllowAny]
+        elif self.request.method == 'POST':
+            self.permission_classes = [IsAuthenticated]
         else:
-            self.permission_classes = [IsAuthenticatedOrReadOnly]
+            self.permission_classes = [IsAuthenticated, IsAuthor]
         return super().get_permissions()
