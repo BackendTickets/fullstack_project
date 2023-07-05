@@ -4,7 +4,7 @@ from applications.movies.models import Movie
 from applications.genres.models import Genre
 
 class MovieSerializer(serializers.ModelSerializer):
-    genres = GenreSerializer(many=True)
+    genres = GenreSerializer(many=True, required=False)
 
     class Meta:
         model = Movie
@@ -18,5 +18,7 @@ class MovieSerializer(serializers.ModelSerializer):
             # Создание или получение объекта жанра из приложения genres
             genre, _ = Genre.objects.get_or_create(**genre_data)
             movie.genres.add(genre)
+        
+        movie.save()
 
         return movie
