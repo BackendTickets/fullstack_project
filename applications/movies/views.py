@@ -14,7 +14,7 @@ class MovieViewSet(ModelViewSet):
     serializer_class = MovieSerializer
     pagination_class = LimitOffsetPagination
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    ilterset_fields = ['genres', 'release_date']
+    filterset_fields = ['genres', 'release_date']
     search_fields = ['title', 'genres', 'cast']
 
     def get_permissions(self):
